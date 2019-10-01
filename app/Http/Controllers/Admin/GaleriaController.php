@@ -5,35 +5,35 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Galeria;
-use App\Imovel;
+use App\Anuncio;
 
 class GaleriaController extends Controller
 {
     //
     public function index($id)
     {
-        $imovel = Imovel::find($id);
+        $anuncio = Anuncio::find($id);
 
-        $registros = $imovel->galeria()->orderBy('ordem')->get();
-        return view('admin.galerias.index',compact('registros','imovel'));
+        $registros = $anuncio->galeria()->orderBy('ordem')->get();
+        return view('admin.galerias.index',compact('registros','anuncio'));
     }
 
     public function adicionar($id)
     {
         
-        $imovel = Imovel::find($id);        
+        $anuncio = Anuncio::find($id);        
 
-        return view('admin.galerias.adicionar',compact('imovel'));
+        return view('admin.galerias.adicionar',compact('anuncio'));
     }
 
     public function salvar(Request $request,$id)
     {
-        $imovel = Imovel::find($id);
+        $anuncio = Anuncio::find($id);
 
         $dados = $request->all();
 
-        if($imovel->galeria()->count()){
-        	$galeria = $imovel->galeria()->orderBy('ordem','desc')->first();
+        if($anuncio->galeria()->count()){
+        	$galeria = $anuncio->galeria()->orderBy('ordem','desc')->first();
         	$ordemAtual = $galeria->ordem;
         }else{
         	$ordemAtual = 0;
@@ -46,11 +46,11 @@ class GaleriaController extends Controller
         		$registro = new Galeria();
 
         		$rand = rand(11111,99999);
-	    		$diretorio = "img/imoveis/".str_slug($imovel->titulo,'_')."/";
+	    		$diretorio = "img/anuncios/".str_slug($anuncio->titulo,'_')."/";
 	    		$ext = $imagem->guessClientExtension();
 	    		$nomeArquivo = "_img_".$rand.".".$ext;
 	    		$imagem->move($diretorio,$nomeArquivo);
-	    		$registro->imovel_id = $imovel->id;
+	    		$registro->anuncio_id = $anuncio->id;
 	    		$registro->ordem = $ordemAtual + 1;
 	    		$ordemAtual++;
 	    		$registro->imagem = $diretorio.'/'.$nomeArquivo;
@@ -62,16 +62,16 @@ class GaleriaController extends Controller
 
         \Session::flash('mensagem',['msg'=>'Registro criado com sucesso!','class'=>'green white-text']);
 
-        return redirect()->route('admin.galerias',$imovel->id);
+        return redirect()->route('admin.galerias',$anuncio->id);
         
     }
 
     public function editar($id)
     {
         $registro = Galeria::find($id);
-        $imovel = $registro->imovel;      
+        $anuncio = $registro->anuncio;      
 
-        return view('admin.galerias.editar',compact('registro','imovel'));
+        return view('admin.galerias.editar',compact('registro','anuncio'));
         
     }
 
@@ -84,13 +84,13 @@ class GaleriaController extends Controller
         $registro->descricao = $dados['descricao'];
         $registro->ordem = $dados['ordem'];
 
-        $imovel = $registro->imovel;
+        $anuncio = $registro->anuncio;
         
 
         $file = $request->file('imagem');
     	if($file){
     		$rand = rand(11111,99999);
-    		$diretorio = "img/imoveis/".str_slug($imovel->titulo,'_')."/";
+    		$diretorio = "img/anuncios/".str_slug($anuncio->titulo,'_')."/";
     		$ext = $file->guessClientExtension();
     		$nomeArquivo = "_img_".$rand.".".$ext;
     		$file->move($diretorio,$nomeArquivo);
@@ -102,20 +102,20 @@ class GaleriaController extends Controller
 
         \Session::flash('mensagem',['msg'=>'Registro atualizado com sucesso!','class'=>'green white-text']);
 
-        return redirect()->route('admin.galerias',$imovel->id);
+        return redirect()->route('admin.galerias',$anuncio->id);
     }
 
     public function deletar($id)
     {
         
         $galeria = Galeria::find($id);
-        $imovel = $galeria->imovel;
+        $anuncio = $galeria->anuncio;
 
         $galeria->delete();
 
         \Session::flash('mensagem',['msg'=>'Registro deletado com sucesso!','class'=>'green white-text']);
 
-        return redirect()->route('admin.galerias',$imovel->id);
+        return redirect()->route('admin.galerias',$anuncio->id);
 
     }
 }

@@ -4,6 +4,6 @@
 @include('layouts._site._slides')
 
 <div class="container">
-    @include('layouts._site._lista_imoveis')
+    @include('layouts._site._lista_anuncios')
 </div>
 @endsection

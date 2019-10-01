@@ -1,15 +1,14 @@
 @extends('layouts.site')
 
 @section('content')
-
 <div class="container">
     <div class="row section">
-        <h3 align="center">Imóvel</h3>
+        <h3 align="center">Anuncio</h3>
         <div class="divider"></div>
     </div>
     <div class="row section">
         <div class="col s12 m8">
-            @if($imovel->galeria()->count())
+            @if($anuncio->galeria()->count())
             <div class="row">
                 <div class="slider">
                     <ul class="slides">
@@ -31,22 +30,21 @@
                 <button onclick="sliderNext()" class="btn blue">Próxima</button>
             </div>
             @else
-            <img class="responsive-img" src="{{ asset($imovel->imagem) }}">
+            <img class="responsive-img" src="{{ asset($anuncio->imagem) }}">
             @endif
         </div>
         <div class="col s12 m4">
-            <h4>{{ $imovel->titulo }}</h4>
+            <h4>{{ $anuncio->titulo }}</h4>
             <blockquote>
-                {{ $imovel->descricao }}
+                {{ $anuncio->descricao }}
             </blockquote>
-            <p><b>Código:</b> {{ $imovel->id }}</p>
-            <p><b>Status:</b> {{ $imovel->status }}</p>
-            <p><b>Tipo:</b> {{ $imovel->tipo->titulo }}</p>
-            <p><b>Dormitórios:</b> {{ $imovel->dormitorios }}</p>
-            <p><b>Endereço:</b> {{ $imovel->endereco }}</p>
-            <p><b>Cep:</b> {{ $imovel->cep }}</p>
-            <p><b>Cidade:</b> {{ $imovel->cidade->nome }}</p>
-            <p><b>Valor:</b> R$ {{ number_format($imovel->valor,2,",",".") }}</p>
+            <p><b>Código:</b> {{ $anuncio->id }}</p>
+            <p><b>Status:</b> {{ $anuncio->status }}</p>
+            <p><b>Tipo:</b> {{ $anuncio->tipo->titulo }}</p>           
+            <p><b>Endereço:</b> {{ $anuncio->endereco }}</p>
+            <p><b>Cep:</b> {{ $anuncio->cep }}</p>
+            <p><b>Cidade:</b> {{ $anuncio->cidade->nome }}</p>
+            <p><b>Valor:</b> R$ {{ number_format($anuncio->valor,2,",",".") }}</p>
             <p>
             <b>Compartilhar: </b>
             <a target="_blank" href="http://www.facebook.com/sharer.php?u={{ isset($seo['url']) ? $seo['url'] : config('app.url') }}"><i class="blue-text mdi mdi-facebook mdi-24px"></i></a>
@@ -58,12 +56,12 @@
     <div class="row section">
         <div class="col s12 m8">
             <div class="video-container">
-                {!! $imovel->mapa !!}
+                {!! $anuncio->mapa !!}
             </div>
         </div>
         <div class="col s12 m4">
             <h4>Detalhes:</h4>
-            <p>{{ $imovel->detalhes }}</p>
+            <p>{{ $anuncio->detalhes }}</p>
         </div>
     </div>
 </div>

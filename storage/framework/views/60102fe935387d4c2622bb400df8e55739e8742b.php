@@ -6,15 +6,15 @@
 		    <div class="nav-wrapper green">
 		      	<div class="col s12">
 			        <a href="<?php echo e(route('admin.principal')); ?>" class="breadcrumb">Início</a>
-			        <a href="<?php echo e(route('admin.imoveis')); ?>" class="breadcrumb">Lista de Imóveis</a>
-			        <a href="<?php echo e(route('admin.galerias',$imovel->id)); ?>" class="breadcrumb">Galeria de imagens</a>
+			        <a href="<?php echo e(route('admin.anuncios')); ?>" class="breadcrumb">Lista de Anuncios</a>
+			        <a href="<?php echo e(route('admin.galerias',$anuncio->id)); ?>" class="breadcrumb">Galeria de imagens</a>
 			        <a class="breadcrumb">Adicionar Imagem</a>
 		      	</div>
 		    </div>
 	  	</nav>
 	</div>
 	<div class="row">
-		<form action="<?php echo e(route('admin.galerias.salvar',$imovel->id)); ?>" method="post" enctype="multipart/form-data">
+		<form action="<?php echo e(route('admin.galerias.salvar',$anuncio->id)); ?>" method="post" enctype="multipart/form-data">
 
 		<?php echo e(csrf_field()); ?>
 

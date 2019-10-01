@@ -6,19 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">  
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-  
- 
-
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    
+    <!-- Material Icons -->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Compiled and minified CSS -->
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>            
     
     <!-- <script src="{{asset('js/init.js')}}"></script> -->
     <script src="{{ asset('js/init.js')}}" type="text/javascript"></script>
@@ -26,7 +22,6 @@
 </head>
 <body>
 <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
-
     <header>
     @include('layouts._admin._nav')
     </header>

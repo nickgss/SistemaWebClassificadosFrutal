@@ -25,7 +25,7 @@ Route::post('/contato/enviar',['as'=>'site.contato.enviar', 'uses'=>'Site\Pagina
 
 
 
-Route::get('/imovel/{id}/{titulo?}',['as'=>'site.imovel', 'uses'=>'Site\ImovelController@index']);
+Route::get('/anuncio/{id}/{titulo?}',['as'=>'site.anuncio', 'uses'=>'Site\AnuncioController@index']);
 
 Route::get('/busca',['as'=>'site.busca', 'uses'=>'Site\HomeController@busca']);
 
@@ -76,12 +76,12 @@ Route::group(['middleware'=>'auth'], function(){
 	Route::put('/admin/cidades/atualizar/{id}',['as'=>'admin.cidades.atualizar', 'uses'=>'Admin\CidadeController@atualizar']);
 	Route::get('/admin/cidades/deletar/{id}',['as'=>'admin.cidades.deletar', 'uses'=>'Admin\CidadeController@deletar']);
 
-	Route::get('/admin/imoveis',['as'=>'admin.imoveis', 'uses'=>'Admin\ImovelController@index']);
-	Route::get('/admin/imoveis/adicionar',['as'=>'admin.imoveis.adicionar', 'uses'=>'Admin\ImovelController@adicionar']);
-	Route::post('/admin/imoveis/salvar',['as'=>'admin.imoveis.salvar', 'uses'=>'Admin\ImovelController@salvar']);
-	Route::get('/admin/imoveis/editar/{id}',['as'=>'admin.imoveis.editar', 'uses'=>'Admin\ImovelController@editar']);
-	Route::put('/admin/imoveis/atualizar/{id}',['as'=>'admin.imoveis.atualizar', 'uses'=>'Admin\ImovelController@atualizar']);
-	Route::get('/admin/imoveis/deletar/{id}',['as'=>'admin.imoveis.deletar', 'uses'=>'Admin\ImovelController@deletar']);
+	Route::get('/admin/anuncios',['as'=>'admin.anuncios', 'uses'=>'Admin\AnuncioController@index']);
+	Route::get('/admin/anuncios/adicionar',['as'=>'admin.anuncios.adicionar', 'uses'=>'Admin\AnuncioController@adicionar']);
+	Route::post('/admin/anuncios/salvar',['as'=>'admin.anuncios.salvar', 'uses'=>'Admin\AnuncioController@salvar']);
+	Route::get('/admin/anuncios/editar/{id}',['as'=>'admin.anuncios.editar', 'uses'=>'Admin\AnuncioController@editar']);
+	Route::put('/admin/anuncios/atualizar/{id}',['as'=>'admin.anuncios.atualizar', 'uses'=>'Admin\AnuncioController@atualizar']);
+	Route::get('/admin/anuncios/deletar/{id}',['as'=>'admin.anuncios.deletar', 'uses'=>'Admin\AnuncioController@deletar']);
 
 	Route::get('/admin/galerias/{id}',['as'=>'admin.galerias', 'uses'=>'Admin\GaleriaController@index']);
 	Route::get('/admin/galerias/adicionar/{id}',['as'=>'admin.galerias.adicionar', 'uses'=>'Admin\GaleriaController@adicionar']);

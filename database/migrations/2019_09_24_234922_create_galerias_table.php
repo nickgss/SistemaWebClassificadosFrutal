@@ -15,8 +15,8 @@ class CreateGaleriasTable extends Migration
     {
         Schema::create('galerias', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('imovel_id')->unsigned();
-            $table->foreign('imovel_id')->references('id')->on('imoveis');
+            $table->bigInteger('anuncio_id')->unsigned();
+            $table->foreign('anuncio_id')->references('id')->on('anuncios');
             $table->string('titulo')->nullable();
             $table->string('descricao')->nullable();
             $table->string('imagem');

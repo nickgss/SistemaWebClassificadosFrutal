@@ -7,7 +7,7 @@
 			    <div class="nav-wrapper green">
 			      	<div class="col s12">
 				        <a href="<?php echo e(route('admin.principal')); ?>" class="breadcrumb">Início</a>
-				        <a href="<?php echo e(route('admin.imoveis')); ?>" class="breadcrumb">Lista de Imóveis</a>
+				        <a href="<?php echo e(route('admin.anuncios')); ?>" class="breadcrumb">Lista de Anuncios</a>
 				        <a class="breadcrumb">Galeria de imagens</a>
 			      	</div>
 			    </div>
@@ -46,7 +46,7 @@
 			
 		</div>
 		<div class="row">
-			<a class="btn blue" href="<?php echo e(route('admin.galerias.adicionar',$imovel->id)); ?>">Adicionar</a>
+			<a class="btn blue" href="<?php echo e(route('admin.galerias.adicionar',$anuncio->id)); ?>">Adicionar</a>
 		</div>
 	</div>
 

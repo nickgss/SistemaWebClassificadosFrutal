@@ -55,13 +55,13 @@ class TipoController extends Controller
     public function deletar($id)
     {
         
-        if(Imovel::where('tipo_id','=',$id)->count()){
+        if(Anuncio::where('tipo_id','=',$id)->count()){
             
-            $msg = "Não é possível deletar esse tipo de imóvel! Esses imóveis (";
-            $imoveis = Imovel::where('tipo_id','=',$id)->get();
+            $msg = "Não é possível deletar esse tipo de imóvel! Esses anuncios (";
+            $anuncios = Anuncio::where('tipo_id','=',$id)->get();
 
-            foreach ($imoveis as $imovel) {
-                $msg .= "id:".$imovel->id." ";
+            foreach ($anuncios as $anuncio) {
+                $msg .= "id:".$anuncio->id." ";
             }
             $msg .= ") estão relacionados.";
 

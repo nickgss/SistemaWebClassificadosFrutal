@@ -2,14 +2,14 @@
 
 @section('content')
 	<div class="container">
-		<h2 class="center">Lista de Imóveis</h2>
+		<h2 class="center">Lista de Anuncios</h2>
 
 		<div class="row">
 		 	<nav>
 			    <div class="nav-wrapper green">
 			      	<div class="col s12">
 				        <a href="{{ route('admin.principal')}}" class="breadcrumb">Início</a>
-				        <a class="breadcrumb">Lista de Imóveis</a>
+				        <a class="breadcrumb">Lista de Anuncios</a>
 			      	</div>
 			    </div>
 		  	</nav>
@@ -41,9 +41,9 @@
 						<td><img width="100" src="{{asset($registro->imagem)}}"></td>
 						<td>{{ $registro->publicar }}</td>
 						<td>
-							<a class="btn orange" href="{{ route('admin.imoveis.editar',$registro->id) }}">Editar</a>
+							<a class="btn orange" href="{{ route('admin.anuncios.editar',$registro->id) }}">Editar</a>
 							<a class="btn green" href="{{ route('admin.galerias',$registro->id) }}">Galeria</a>
-							<a class="btn red" href="javascript: if(confirm('Deletar esse registro?')){ window.location.href = '{{ route('admin.imoveis.deletar',$registro->id) }}' }">Deletar</a>
+							<a class="btn red" href="javascript: if(confirm('Deletar esse registro?')){ window.location.href = '{{ route('admin.anuncios.deletar',$registro->id) }}' }">Deletar</a>
 						</td>
 					</tr>
 				@endforeach
@@ -52,7 +52,7 @@
 			
 		</div>
 		<div class="row">
-			<a class="btn blue" href="{{route('admin.imoveis.adicionar')}}">Adicionar</a>
+			<a class="btn blue" href="{{route('admin.anuncios.adicionar')}}">Adicionar</a>
 		</div>
 	</div>
 

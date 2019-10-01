@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Imovel extends Model
+class Anuncio extends Model
 {
-    protected $table = "imoveis";
-
+    protected $table = "anuncios";
+    
     public function tipo()
     {
     	return $this->belongsTo('App\Tipo','tipo_id');
@@ -18,6 +18,6 @@ class Imovel extends Model
     }
     public function galeria()
     {
-    	return $this->hasMany('App\Galeria','imovel_id');
+    	return $this->hasMany('App\Galeria','anuncio_id');
     }
 }

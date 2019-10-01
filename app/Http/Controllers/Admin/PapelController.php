@@ -38,9 +38,9 @@ class PapelController extends Controller
     	// if(!auth()->user()->can('papel_editar')){            
         //     return redirect()->route('admin.principal');
         // }
-        if(Papel::find($id)->nome == "admin"){
-    		return redirect()->route('admin.papel');
-    	}
+        // if(Papel::find($id)->nome == "admin"){
+    	// 	return redirect()->route('admin.papel');
+    	// }
 
     	$registro = Papel::find($id);
 
@@ -52,9 +52,9 @@ class PapelController extends Controller
     	// if(!auth()->user()->can('papel_editar')){            
         //     return redirect()->route('admin.principal');
         // }
-        if(Papel::find($id)->nome == "admin"){
-    		return redirect()->route('admin.papel');
-    	}
+        // if(Papel::find($id)->nome == "admin"){
+    	// 	return redirect()->route('admin.papel');
+    	// }
     	Papel::find($id)->update($request->all());
 
     	return redirect()->route('admin.papel');
@@ -66,9 +66,9 @@ class PapelController extends Controller
         //     return redirect()->route('admin.principal');
         // }
 
-        if(Papel::find($id)->nome == "admin"){
-    		return redirect()->route('admin.papel');
-    	}
+        // if(Papel::find($id)->nome == "admin"){
+    	// 	return redirect()->route('admin.papel');
+    	// }
     	Papel::find($id)->delete();
     	return redirect()->route('admin.papel');
 

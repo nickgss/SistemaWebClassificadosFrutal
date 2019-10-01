@@ -2,9 +2,10 @@
 	<form action="{{route('site.busca')}}" >
 		<div class="input-field col s6 m4">
 			<select name="status">
-				<option {{ isset($busca['status']) && $busca['status'] == 'todos' ? 'selected' : '' }} value="todos">Aluga e Vende</option>
+				<option {{ isset($busca['status']) && $busca['status'] == 'todos' ? 'selected' : '' }} value="todos">Aluga,Vende e Servicos</option>
 				<option {{ isset($busca['status']) && $busca['status'] == 'aluga' ? 'selected' : '' }} value="aluga">Aluga</option>
 				<option {{ isset($busca['status']) && $busca['status'] == 'vende' ? 'selected' : '' }} value="vende">Vende</option>
+				<option {{ isset($busca['status']) && $busca['status'] == 'servico' ? 'selected' : '' }} value="servico">Servico</option>
 			</select>
 			<label>Status</label>
 		</div>
@@ -26,7 +27,7 @@
 			</select>
 			<label>Cidade</label>
 		</div>
-		<div class="input-field col s6 m3">
+		<!-- <div class="input-field col s6 m3">
 			<select name="dormitorios">
 				<option {{ isset($busca['dormitorios']) && $busca['dormitorios'] == 0 ? 'selected' : '' }} value="0">Todos</option>
 				<option {{ isset($busca['dormitorios']) && $busca['dormitorios'] == 1 ? 'selected' : '' }} value="1">1</option>
@@ -35,7 +36,7 @@
 				<option {{ isset($busca['dormitorios']) && $busca['dormitorios'] == 4 ? 'selected' : '' }} value="4">Mais</option>
 			</select>
 			<label>Dormitórios</label>
-		</div>
+		</div> -->
 		<div class="input-field col s12 m4">
 			<select name="valor">
 				<option {{(isset($busca['valor']) && $busca['valor'] == 0 ? 'selected' : '' )}} value="0">Todos os Valores</option>

@@ -8,8 +8,8 @@
 		    <div class="nav-wrapper green">
 		      	<div class="col s12">
 			        <a href="{{ route('admin.principal')}}" class="breadcrumb">Início</a>
-			        <a href="{{route('admin.imoveis')}}" class="breadcrumb">Lista de Imóveis</a>
-			        <a href="{{route('admin.galerias',$imovel->id)}}" class="breadcrumb">Galeria de imagens</a>
+			        <a href="{{route('admin.anuncios')}}" class="breadcrumb">Lista de Anuncios</a>
+			        <a href="{{route('admin.galerias',$anuncio->id)}}" class="breadcrumb">Galeria de imagens</a>
 			        <a class="breadcrumb">Editar Imagem</a>
 		      	</div>
 		    </div>

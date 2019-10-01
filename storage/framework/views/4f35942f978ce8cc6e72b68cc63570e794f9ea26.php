@@ -31,9 +31,9 @@
         <ul class="right hide-on-med-and-down">
         <li><a href="<?php echo e(route('admin.principal')); ?>">Início</a></li>
             <li><a target="_blanck" href="<?php echo e(route('site.home')); ?>">Site</a></li>
-            <!-- <?php if(Auth::guest()): ?> -->
+            <?php if(Auth::guest()): ?>
               <li><a href="<?php echo e(route('admin.login')); ?>">Login</a></li>
-            <!-- <?php else: ?> -->
+            <?php else: ?>
 
             <li><a class="dropdown-trigger btn" href="#!" data-target="dropdown1"><?php echo e(Auth::user()->name); ?>
 
@@ -41,16 +41,16 @@
 
             <ul id="dropdown1" class="dropdown-content">
               <li><a href="#!"><?php echo e(Auth::user()->name); ?></a></li>
-              <li><a href="<?php echo e(route('admin.imoveis')); ?>">Imóveis</a></li>
+              <li><a href="<?php echo e(route('admin.anuncios')); ?>">Anuncios</a></li>
               <li><a href="<?php echo e(route('admin.tipos')); ?>">Tipos</a></li>
               <li><a href="<?php echo e(route('admin.cidades')); ?>">Cidades</a></li>
               <li><a href="<?php echo e(route('admin.slides')); ?>">Slides</a></li>
-              <!-- <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('usuario_listar')): ?> -->
+              <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('usuario_listar')): ?>
               <li><a href="<?php echo e(route('admin.usuarios')); ?>">Usuários</a></li>
-              <!-- <?php endif; ?>
-              <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('papel_listar')): ?> -->
+              <?php endif; ?>
+              <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('papel_listar')): ?> 
               <li><a href="<?php echo e(route('admin.papel')); ?>">Papel</a></li>
-              <!-- <?php endif; ?> -->
+              <?php endif; ?>
               <li><a href="<?php echo e(route('admin.paginas')); ?>">Páginas</a></li>
             </ul>
 
@@ -67,7 +67,7 @@
               <li><a href="<?php echo e(route('admin.login')); ?>">Login</a></li>
             <?php else: ?>
             <li><a href="#"><?php echo e(Auth::user()->name); ?></a></li>
-            <li><a href="<?php echo e(route('admin.imoveis')); ?>">Imóveis</a></li>
+            <li><a href="<?php echo e(route('admin.anuncios')); ?>">Anuncios</a></li>
             <li><a href="<?php echo e(route('admin.tipos')); ?>">Tipos</a></li>
             <li><a href="<?php echo e(route('admin.cidades')); ?>">Cidades</a></li>
             <li><a href="<?php echo e(route('admin.slides')); ?>">Slides</a></li>
@@ -96,7 +96,7 @@
 
             <ul id="dropdown1" class="dropdown-content">
               <li><a href="#!"><?php echo e(Auth::user()->name); ?></a></li>
-              <li><a href="<?php echo e(route('admin.imoveis')); ?>">Imóveis</a></li>
+              <li><a href="<?php echo e(route('admin.anuncios')); ?>">Anuncios</a></li>
               <li><a href="<?php echo e(route('admin.tipos')); ?>">Tipos</a></li>
               <li><a href="<?php echo e(route('admin.cidades')); ?>">Cidades</a></li>
               <li><a href="<?php echo e(route('admin.slides')); ?>">Slides</a></li>
@@ -119,7 +119,7 @@
               <li><a href="<?php echo e(route('admin.login')); ?>">Login</a></li>
             <?php else: ?>
             <li><a href="#"><?php echo e(Auth::user()->name); ?></a></li>
-            <li><a href="<?php echo e(route('admin.imoveis')); ?>">Imóveis</a></li>
+            <li><a href="<?php echo e(route('admin.anuncios')); ?>">Anuncios</a></li>
             <li><a href="<?php echo e(route('admin.tipos')); ?>">Tipos</a></li>
             <li><a href="<?php echo e(route('admin.cidades')); ?>">Cidades</a></li>
             <li><a href="<?php echo e(route('admin.slides')); ?>">Slides</a></li>

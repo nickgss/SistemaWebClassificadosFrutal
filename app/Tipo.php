@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tipo extends Model
 {
-    public function imoveis()
+    public function anuncios()
     {
-    	return $this->hasMany('App\Imovel','tipo_id');
+    	return $this->hasMany('App\Anuncio','tipo_id');
     }
 }

@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Galeria extends Model
 {
     //
-    public function imovel()
+    public function anuncio()
     {
-    	return $this->belongsTo('App\Imovel','imovel_id');
+    	return $this->belongsTo('App\Anuncio','anuncio_id');
     }
 }

@@ -26,8 +26,9 @@
 
 <div class="input-field">
     <select name="status">
-        <option value="aluga" {{(isset($registro->status) && $registro->status == 'aluga'  ? 'selected' : '')}}>Aluga</option>
-        <option value="vende" {{(isset($registro->status) && $registro->status == 'vende'  ? 'selected' : '')}}>Vende</option>
+        <option value="aluga" {{(isset($registro->status) && $registro->status == 'aluga'  ? 'selected' : '')}}>Alugar</option>
+        <option value="vende" {{(isset($registro->status) && $registro->status == 'vende'  ? 'selected' : '')}}>Vender</option>
+        <option value="servico" {{(isset($registro->status) && $registro->status == 'servico'  ? 'selected' : '')}}>Serviços</option>
     </select>
     <label>Status</label>
 </div>
@@ -38,7 +39,7 @@
             <option value="{{ $tipo->id }}" {{(isset($registro->tipo_id) && $registro->tipo_id == $tipo->id  ? 'selected' : '')}}>{{ $tipo->titulo }}</option>
         @endforeach
     </select>
-    <label>Tipo de Imóvel</label>
+    <label>Tipo de Anuncio</label>
 </div>
 
 <div class="input-field">
@@ -66,13 +67,8 @@
 </div>
 
 <div class="input-field">
-    <input type="text" name="dormitorios" class="validate" value="{{(isset($registro->dormitorios) ? $registro->dormitorios : '')}}">
-    <label>Dormitórios (Ex: 3)</label>
-</div>
-
-<div class="input-field">
     <input type="text" name="detalhes" class="validate" value="{{(isset($registro->detalhes) ? $registro->detalhes : '')}}">
-    <label>Detalhes (Ex: Sacada: 1 - Banheiro: 2 - Sala de Jantar - Churrasqueira)</label>
+    <label>Detalhes (Ex: Alugo... Vendo... Presto serviços....)</label>
 </div>
 
 <div class="input-field">

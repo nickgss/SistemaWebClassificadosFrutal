@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Cidade;
-use App\Imovel;
+use App\Anuncio;
 
 class CidadeController extends Controller
 {
@@ -59,13 +59,13 @@ class CidadeController extends Controller
 
     public function deletar($id)
     {
-        if(Imovel::where('cidade_id','=',$id)->count()){
+        if(Anuncio::where('cidade_id','=',$id)->count()){
             
-            $msg = "Não é possível deletar essa cidade! Esses imóveis (";
-            $imoveis = Imovel::where('cidade_id','=',$id)->get();
+            $msg = "Não é possível deletar essa cidade! Estes anuncios (";
+            $anuncios = Anuncio::where('cidade_id','=',$id)->get();
 
-            foreach ($imoveis as $imovel) {
-                $msg .= "id:".$imovel->id." ";
+            foreach ($anuncios as $anuncio) {
+                $msg .= "id:".$anuncio->id." ";
             }
             $msg .= ") estão relacionados.";
 
